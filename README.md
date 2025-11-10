@@ -1,2 +1,42 @@
 # -C-code-using-inheritance-with-a-base-class-and-at-least-two-child-classes-and-at-least-two-errors
  C++ program using inheritance with a base class and at least two child classes and at least two errors
+#include <iostream>
+using namespace std;
+
+// Base class
+class Animal {
+public:
+    void speak() {
+        cout << "Animal speaks" << endl;
+    }
+};
+
+// Derived class 1
+class Dog : public Animal {
+public:
+    void speak() {
+        cout << "Dog barks" << endl;
+    }
+};
+
+// Derived class 2
+class Cat : public Animal {
+public:
+    void speak() {
+        cout << "Cat meows" << endl;
+    }
+};
+
+int main() {
+    Animal* myAnimal;
+
+    // Error 1: Misspelled class name (should be Dog)
+    myAnimal = new Dgo();
+    myAnimal->speak();
+
+    // Error 2: Incorrect method call syntax (missing parentheses)
+    Cat myCat;
+    myCat.speak;
+
+    return 0;
+}
